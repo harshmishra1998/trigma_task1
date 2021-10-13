@@ -1,0 +1,20 @@
+
+<mat-card class="text-center">
+    <h2>Broken Down By Type</h2>
+    <hr>
+<table>
+    <tr>
+        <th>Type</th>
+        <th *ngFor="let header of headers">{{header}}</th>
+    </tr>
+    <tbody>
+        
+        <tr  *ngFor="let data of finalData.type;let i = index">
+            <td>
+                {{data}}
+           </td>
+            <td *ngFor="let l of finalData.price[i][data]">{{l}}</td>
+        </tr>
+    </tbody>
+</table>
+</mat-card>

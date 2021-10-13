@@ -1,0 +1,19 @@
+<mat-card class="text-center" *ngIf="error==='';else userNotFound">
+  <p>Please login</p>
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="credentials.username">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput [(ngModel)]="credentials.password" type="password">
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary" (click)="loginClicked()">Login</button>
+</mat-card>
+<ng-template #userNotFound>
+  <mat-card class="text-center error">
+    {{error}}
+  </mat-card>
+</ng-template>
